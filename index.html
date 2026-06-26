@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mass Transfer Column — Water Treatment Process</title>
+<meta name="description" content="Interactive animated cutaway of a water treatment mass transfer column.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="topbar">
+  <div class="topbar__mark">
+    <span class="topbar__tag">FIG. 01 / PROCESS SCHEMATIC</span>
+    <h1 class="topbar__title">Mass Transfer Column <span class="topbar__divider">—</span> Water Treatment</h1>
+  </div>
+  <div class="topbar__meta">
+    <div class="meta-pill"><span class="meta-pill__label">Stage</span><span class="meta-pill__value" id="meta-stage">0 / 6</span></div>
+    <div class="meta-pill"><span class="meta-pill__label">Status</span><span class="meta-pill__value" id="meta-status">Idle</span></div>
+  </div>
+</header>
+
+<main class="layout">
+
+  <!-- LEFT: process step list -->
+  <aside class="panel panel--steps" aria-label="Process steps">
+    <h2 class="panel__heading">Process Sequence</h2>
+    <p class="panel__sub">Water travels through six stages, top to bottom.</p>
+    <ol class="steplist" id="steplist">
+      <!-- populated by JS -->
+    </ol>
+  </aside>
+
+  <!-- CENTER: the column diagram -->
+  <section class="stage" aria-label="Column animation">
+    <div class="stage__frame">
+      <div id="column-root" class="column-root"></div>
+    </div>
+    <p class="stage__hint">Click any zone to inspect it · hover for a quick read</p>
+  </section>
+
+  <!-- RIGHT: info + controls -->
+  <aside class="panel panel--info" aria-label="Zone information and controls">
+
+    <div class="info-card" id="info-card">
+      <span class="info-card__eyebrow" id="info-eyebrow">Information</span>
+      <h3 class="info-card__title" id="info-title">Select a zone</h3>
+      <p class="info-card__body" id="info-body">Click any stage in the diagram, or use the process list on the left, to see how it treats the water.</p>
+      <div class="info-card__specs" id="info-specs"></div>
+    </div>
+
+    <div class="control-card">
+      <h2 class="panel__heading">Controls</h2>
+      <div class="control-buttons">
+        <button class="btn btn--primary" id="btn-play" aria-label="Play animation">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M6 4l14 8-14 8V4z" fill="currentColor"/></svg>
+          Play
+        </button>
+        <button class="btn" id="btn-pause" aria-label="Pause animation">
+          <svg viewBox="0 0 24 24" width="16" height="16"><rect x="5" y="4" width="5" height="16" fill="currentColor"/><rect x="14" y="4" width="5" height="16" fill="currentColor"/></svg>
+          Pause
+        </button>
+        <button class="btn" id="btn-restart" aria-label="Restart animation">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path d="M12 5V2L7 7l5 5V9a5 5 0 1 1-5 5H5a7 7 0 1 0 7-9z" fill="currentColor"/></svg>
+          Restart
+        </button>
+      </div>
+      <div class="control-buttons control-buttons--step">
+        <button class="btn btn--ghost" id="btn-prev" aria-label="Previous step">
+          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M15 4l-8 8 8 8V4z" fill="currentColor"/></svg>
+          Previous
+        </button>
+        <button class="btn btn--ghost" id="btn-next" aria-label="Next step">
+          Next
+          <svg viewBox="0 0 24 24" width="14" height="14"><path d="M9 4l8 8-8 8V4z" fill="currentColor"/></svg>
+        </button>
+      </div>
+
+      <div class="speed-row">
+        <span class="speed-row__label">Speed</span>
+        <input type="range" id="speed-slider" min="0.5" max="2.5" step="0.1" value="1" aria-label="Animation speed">
+        <span class="speed-row__readout" id="speed-readout">1.0×</span>
+      </div>
+    </div>
+
+    <div class="legend-card">
+      <h2 class="panel__heading">Reading the Diagram</h2>
+      <ul class="legend-list">
+        <li><span class="legend-dot legend-dot--water"></span> Water flow</li>
+        <li><span class="legend-dot legend-dot--ozone"></span> Ozone gas</li>
+        <li><span class="legend-dot legend-dot--uv"></span> UV dose</li>
+      </ul>
+    </div>
+
+  </aside>
+
+</main>
+
+<footer class="bottombar">
+  <div class="bottombar__strip" id="bottombar-strip">
+    <span class="bottombar__item">Inlet: <strong id="bb-inlet">Raw water</strong></span>
+    <span class="bottombar__sep">→</span>
+    <span class="bottombar__item">Active zone: <strong id="bb-zone">—</strong></span>
+    <span class="bottombar__sep">→</span>
+    <span class="bottombar__item">Outlet: <strong id="bb-outlet">Pending</strong></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
