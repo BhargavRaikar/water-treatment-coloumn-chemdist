@@ -168,7 +168,7 @@ function buildColumnSVG(){
         <g id="distributor-drops"></g>
       </g>
 
-      <!-- ===== ZONE 2: Mass Transfer Zone (wire mesh + ozone bubbles) ===== -->
+      <!-- ===== ZONE 2: Mass Transfer Zone (PTFE random packing + ozone bubbles) ===== -->
       <g id="zone-mtz-visual" transform="translate(0,104)">
         <rect x="92" y="0" width="236" height="120" fill="url(#meshPattern)" opacity="0.9"/>
         <rect x="92" y="0" width="236" height="120" fill="#142B40" opacity="0.35"/>
@@ -277,7 +277,7 @@ function buildColumnSVG(){
       <g>
         <line x1="336" y1="160" x2="358" y2="160" stroke="#5A7184" stroke-width="1"/>
         <text x="362" y="158">Mass Transfer Zone</text>
-        <text x="362" y="172" fill="#5A7184" font-size="9">Ozone + wire mesh</text>
+        <text x="362" y="172" fill="#5A7184" font-size="9">Ozone + PTFE random packing</text>
       </g>
       <g>
         <line x1="336" y1="280" x2="358" y2="280" stroke="#5A7184" stroke-width="1"/>
