@@ -19,12 +19,12 @@ const ZONES = [
     id: "mtz",
     num: 2,
     title: "Mass Transfer Zone",
-    short: "Ozone + wire-mesh packing",
+    short: "Ozone + PTFE random packing",
     eyebrow: "Stage 02 — Oxidation",
-    body: "Ozone gas is injected and diffuses through the water as it flows down through structural packing made of wire mesh. The mesh creates a huge surface area, so gas and liquid mix far more efficiently than they would in open water. Ozone oxidizes dissolved contaminants and breaks down organics into smaller, more biodegradable fragments.",
+    body: "Ozone gas is injected and diffuses through the water as it flows down through random packing made of PTFE(Teflon). The packing creates a huge surface area, so gas and liquid mix far more efficiently than they would in open water. Ozone oxidizes dissolved contaminants and breaks down organics into smaller, more biodegradable fragments.",
     specs: [
       ["Gas phase", "Ozone (O₃)"],
-      ["Packing", "Structural wire mesh"],
+      ["Packing", "Random PTFE packing"],
       ["Mechanism", "Gas–liquid mass transfer"]
     ]
   },
