@@ -418,6 +418,24 @@ body{
 .bottombar__sep{ color: var(--line); }
 
 /* ============================================================
+   SCREEN ZONE — external box uses amber accent instead of cyan
+   ============================================================ */
+.zone-hit[data-zone="screen"] .zone-outline{
+  stroke: transparent;
+}
+.zone-hit[data-zone="screen"]:hover .zone-outline{
+  stroke: var(--amber);
+}
+.zone-hit[data-zone="screen"].is-selected .zone-outline{
+  stroke: var(--amber);
+  stroke-width: 2.5px;
+}
+.zone-hit[data-zone="screen"].is-current .zone-outline{
+  stroke: var(--amber);
+  stroke-width: 2px;
+}
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 1100px){
